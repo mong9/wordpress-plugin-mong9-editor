@@ -788,7 +788,7 @@ a.m9-img-zoom ._overlay{visibility:hidden}
 #editWindow-grid{width:300px;margin:10px;box-shadow:none}
 
 ._m9connect_box{position:absolute;z-index:1111;bottom:7px;left:7px}
-.m9-btn._m9connect{background:#E91E63;border-color:#E91E63;color:#fff;border-radius:5px;font-size:12px}
+.m9-btn._m9connect{display:inline-block;background:#E91E63;border-color:#E91E63;color:#fff;border-radius:5px;font-size:12px;padding:0.5em 2em;text-decoration:none}
 
 /* m9a-float  */
 [class*="m9a-float-"]{width:100%;list-style:none !important;padding:0 !important;margin:0 !important}

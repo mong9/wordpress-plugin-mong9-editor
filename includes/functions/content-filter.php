@@ -22,7 +22,11 @@ function Mong9_Html_Convert($html) {
     }
     array_push($domains, $_SERVER['HTTP_HOST'].'/');
     $safeiframe = implode('|',$domains);
-    include_once(MONG9_EDITOR__PLUGIN_DIR . 'etc/htmlpurifier/library/HTMLPurifier.safe-includes.php');
+
+	if(!class_exists('HTMLPurifier')){
+		include_once(MONG9_EDITOR__PLUGIN_DIR . 'etc/htmlpurifier/library/HTMLPurifier.safe-includes.php');
+	}
+
     $config = HTMLPurifier_Config::createDefault();
     // /cache 디렉토리에 CSS, HTML, URI 디렉토리 등을 만든다.
     $config->set('Cache.SerializerPath', MONG9_UPLOAD_DIR);
