@@ -52,6 +52,8 @@ define('MONG9_UPLOAD_DIR',MONG9_NOW_SITE_DIR .'wp-content/uploads/mong9/'); // I
 define('MONG9_IMAGE_UPLOAD_SIZE',$image_upload_size);
 define('MONG9_IMAGE_ADD_MEDIA',0); // Add to Image Media// (업로드된) 이미지 미디어에 추가
 
+require_once(MONG9_EDITOR__PLUGIN_DIR.'includes/functions/editor-function.php');
+
 add_action('init','mong9editor_int');
 
 function mong9editor_int() {
@@ -95,78 +97,11 @@ function mong9editor_int() {
 
 } // function
 
-// Parse 'mong9_action'
-function mong9editor_parse_request($mong9_action = '') {
-
-	if (MONG9_EDITOR_POSSIBLE == 1) {
-
-		if ($mong9_action != '') {
-
-			if (file_exists(MONG9_EDITOR__PLUGIN_DIR .'includes/'. $mong9_action .'.php')) {
-
-				include MONG9_EDITOR__PLUGIN_DIR .'includes/'. $mong9_action .'.php';
-				$func = 'mong9editor_' . $mong9_action;
-				$func();
-				exit();
-
-			}
-
-		}
-
-    }
-
-	print_m9_msg( m9_die_msg('Security check failed.') );
-	exit();
-
-} // function
-
-// Mong9 int
-function mong9editor_enqueue_int() {
-
-	wp_enqueue_script('jquery');
-
-	$nonce = wp_create_nonce('mong9_editor_window_nonce');
-	$mong9_window_url = MONG9_NOW_SITE_DOMAIN .'index.php?mong9_action=editor&nonce='. $nonce;
-
-	$rn = "\n";
-	$_script = "if (!M9_SET) { var M9_SET = {}; }". $rn;
-	$_script .= "M9_SET['mong9_editor_use'] = '". MONG9_EDITOR_POSSIBLE . "';". $rn;
-	$_script .= "M9_SET['mong9_url'] = '". MONG9_EDITOR__PLUGIN_URL ."';". $rn;
-	$_script .= "M9_SET['mong9_screen_size'] = { 'm' : '". MONG9_SCREEN_SIZE_m ."' , 'e' : '". MONG9_SCREEN_SIZE_e ."' };". $rn;
-	$_script .= "M9_SET['google_token'] = '". MONG9_GOOGLE_TOKEN ."';". $rn;
-	$_script .= "M9_SET['mong9_window_url'] = '". $mong9_window_url . "';". $rn;
-
-	wp_add_inline_script('jquery',$_script);
-	wp_enqueue_script('mong9-js',MONG9_EDITOR__PLUGIN_URL.'source/js/mong9.js');
-
-} // function
-
-// Add custom js,css in user mode
-function mong9editor_site_enqueue_scripts() {
-
-	wp_enqueue_style('bootstrap-icons',MONG9_EDITOR__PLUGIN_URL.'source/etc/bootstrap-icons/bootstrap-icons.min.css');
-	wp_enqueue_style('mong9-base',MONG9_EDITOR__PLUGIN_URL.'source/css/mong9-base.css');
-	wp_enqueue_style('mong9',MONG9_EDITOR__PLUGIN_URL.'source/css/mong9.css');
-	wp_enqueue_style('mong9-m',MONG9_EDITOR__PLUGIN_URL.'source/css/mong9-m.css','','','all and (max-width: '. MONG9_SCREEN_SIZE_m .'px)');
-	wp_enqueue_style('mong9-e',MONG9_EDITOR__PLUGIN_URL.'source/css/mong9-e.css','','','all and (max-width: '. MONG9_SCREEN_SIZE_e .'px)');
-
-} // function
-
 // Mong9 Filter
 function Mong9_Html_Convert_Filter($html) {
 	require_once(MONG9_EDITOR__PLUGIN_DIR . 'includes/functions/content-filter.php');
 	return Mong9_Html_Convert($html);
 }
-
-// print ajax message
-function print_m9_msg($msg = '') {
-	echo $msg;
-	exit;	
-}
-
-function m9_die_msg($msg = '') {
-	return __($msg);
-} // function
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Functions used only in WordPress from below
@@ -187,12 +122,6 @@ function mong9_nonce_check($_handle,$value = '') {
 	if (!wp_verify_nonce($value,$_handle)) {
 		die(__('Security check failed.'));
 	}
-}
-
-// Add body class
-function mong9_add_body_class($classes) {
-	$classes[] = 'm9-content';
-	return $classes;
 }
 
 ?>

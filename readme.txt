@@ -5,8 +5,8 @@ Requires at least: 4.9
 Tested up to: 5.2.1
 Requires PHP: 5.3
 Stable tag: 1.2.1
-License: GPL2
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 The most advanced frontend drag & drop content editor. Mong9 Editor is a responsive page builder which can be used to extend the Classic Editor.
 
@@ -55,11 +55,11 @@ The Mong9 Editor works with the Classic Editor. Require activating or installing
 
 **Contact and Q & A**
 
-Please send mail to admin@mong9.com. We will reply to you ASAP.
+Please send mail to mong9mail@gmail.com. We will reply to you ASAP.
 
 **Require Improvements or Errors**
 
-Please send mail to admin@mong9.com. We will reply to your message in priority, and please send us your opinions.
+Please send mail to mong9mail@gmail.com. We will reply to your message in priority, and please send us your opinions.
 
 
 == Changelog ==

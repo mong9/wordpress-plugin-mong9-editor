@@ -1,4 +1,7 @@
 <?
+
+if(!defined("MONG9")) exit();
+
 //http://hookr.io/functions/mime_content_type/
 
 function mime_content_type( $filename ) { 

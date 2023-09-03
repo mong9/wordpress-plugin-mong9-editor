@@ -1,14 +1,11 @@
 <?php
 
+if(!defined("MONG9")) exit();
+
 global $allowedTags;
 $allowedTags = array('a','b','blockquote','br','button','canvas','dd','div','dl','dt','em','h1','h2','h3','h4','h5','h6','i','iframe','img','ol','p','pre','s','span','strong','table','tbody','td','tfoot','th','thead','u','ul');
 
 function Mong9_Html_Convert($html) {
-
-	// HTMLPurifier 가 8.0 이상 지원 안함.
-	if (phpversion() >= 8.0) {
-		return $html;
-	}
 
     $f = file(MONG9_EDITOR__PLUGIN_DIR.'etc/htmlpurifier/safeiframe.txt');
     $domains = array();
@@ -110,12 +107,50 @@ function Mong9_Html_Filter($conv_config) {
 
 	$def->addAttribute('iframe', 'allowfullscreen', 'Bool');
 
+	$def->addAttribute('img','data-m9-m-src','Text');
+	$def->addAttribute('img','data-m9-e-src','Text');
+
 	return $conv_config;
 
 } // function
 
+$m9_font_familys = array();
+function add_mong9_web_font($content) {
+
+	global $m9_font_familys;
+
+	if (preg_match('/\<\!\-\-\s*\/\/\s*Mong9\s*Editor\s*\/\/\s*\-\-\>/i',$content,$check)) {
+
+		if (preg_match('/\<\!\-\-\s*\/\/\s*m9\_font\_family\(\s*(.*)\s*\)\s*\/\/\s*\-\-\>/i',$content,$matches)) {
+
+			$font_familys = explode(',',$matches[1]);
+
+			for ($i=0;$i<count($font_familys);$i++) {
+
+				$font_family = $font_familys[$i];
+
+				if (!$m9_font_familys[$font_family]) {
+
+					$path_parts = pathinfo($font_family);
+
+					mong9_enqueue_style($path_parts['filename'],$font_family,'');
+					$m9_font_familys[$font_family]++;
+
+				}
+
+			} // for
+
+			$content = str_replace($matches[0],'',$content); # Remove => <!--//m9_font_family(XXX1,XXX2,XXX3)//-->
+
+		}
+
+	}
+
+} // function
+
 function Mong9_Convert_Check($html) {
-	return '<div class="m9-content">'. $html .'</div>';
+	add_mong9_web_font($html);
+	return $html;
 } // function
 
 ?>

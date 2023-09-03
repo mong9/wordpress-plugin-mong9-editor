@@ -42,4 +42,4 @@ Mon9 Editor만의 반응형 프로세싱을 경험해 보세요.
 5. "Mong9 Editor"의 활성화 버튼을 클릭하여, 설치를 마무리합니다.
 
 ## 데모(DEMO)페이지
-[https://www.mong9editor.com/index.cgi?page_code=otherpage&code=cms_wordpress](https://www.mong9editor.com/index.cgi?page_code=otherpage&code=cms_wordpress)# wordpress-plugin-mong9-editor
+[https://www.mong9editor.com/index.cgi?page_code=otherpage&code=cms_wordpress](https://www.mong9editor.com/index.cgi?page_code=otherpage&code=cms_wordpress)
