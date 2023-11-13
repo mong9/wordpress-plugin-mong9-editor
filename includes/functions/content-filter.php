@@ -104,7 +104,9 @@ function Mong9_Html_Filter($conv_config) {
 	$def->addAttribute('div','data-m9-execute','Text');
 	$def->addAttribute('div','data-m9-tab-type','Text');
 	$def->addAttribute('a','data-m9-tab-type','Text');
-
+	$def->addAttribute('a','data-m9-href','Text');
+	$def->addAttribute('a','data-m9-execute','Text');
+	
 	$def->addAttribute('iframe', 'allowfullscreen', 'Bool');
 
 	$def->addAttribute('img','data-m9-m-src','Text');
