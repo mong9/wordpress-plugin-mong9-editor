@@ -2499,6 +2499,8 @@ M9ANI["lightbox"] = {
 
 		var _name = '_lightbox_' + Deffect[1]['group'];
 
+		jQuery(Did).addClass(_name);
+		
 		jQuery('.'+_name).each(function() {
 			jQuery(this).prop('href',jQuery(this).data('m9-href'));
 		});
@@ -2506,8 +2508,6 @@ M9ANI["lightbox"] = {
 		if (!M9ANI.lightbox.hash[_name]) {
 			M9ANI.lightbox.hash[_name] = 1;
 		}
-
-		jQuery(Did).addClass(_name);
 
 	} // extend
 
