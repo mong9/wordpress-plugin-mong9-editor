@@ -1169,7 +1169,14 @@ var m9_mobile_checking = {
 	}
 };
 
-(function(jQuery) {
+//////////////////////////////////////////////////////////
+// 리사이징 설정
+//////////////////////////////////////////////////////////
+m9_Resize_Function.push("m9_mode_obj.Responsive();");	
+
+jQuery(function() {
+
+	// m9_animate_document 의 윗부분에 실행	
 	jQuery.getStylesheet = function (href) {
 		var jQueryd = jQuery.Deferred();
 		var jQuerylink = jQuery('<link/>',{
@@ -1180,15 +1187,7 @@ var m9_mobile_checking = {
 		jQueryd.resolve(jQuerylink);
 		return jQueryd.promise();
 	};
-})(jQuery);
-
-//////////////////////////////////////////////////////////
-// 리사이징 설정
-//////////////////////////////////////////////////////////
-m9_Resize_Function.push("m9_mode_obj.Responsive();");	
-
-jQuery(function() {
-
+	
 	m9_mode_obj.int(1);
 	m9_mode_obj.Responsive();
 	m9_mobile_checking.int(); // 모바일체크
@@ -2466,7 +2465,7 @@ M9ANI["lightbox"] = {
 
 		if (M9ANI.lightbox.count == 0) { // if(1)
 
-			m9_ImportCss("//javascript.mong9.com/5.2/etc/TosRUs/css/jquery.tosrus.all.css");
+			m9_ImportCss(M9_SET["mong9_url"] + "/source/etc/TosRUs/css/jquery.tosrus.all.css");
 			m9_ImportScript(M9_SET["mong9_url"] + "/source/etc/hammer.min.js");
 			m9_ImportScript(M9_SET["mong9_url"] + "/source/etc/FlameViewportScale.js");
 			m9_ImportScript(M9_SET["mong9_url"] + "/source/etc/TosRUs/js/jquery.tosrus.all.min.js",function() {
