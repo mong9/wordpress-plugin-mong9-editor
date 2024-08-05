@@ -180,7 +180,7 @@ var Msg = {
 "center" : "Center",
 "msg_27" : "Der Typ für das aktuelle Objekt konnte nicht geändert werden",
 "msg_28" : "Fertig zum Ändern [%1]",
-"msg_29" : "Nur Bilddatei hochladen Verfügbare Erweiterungsdatei [jpg, jpeg, gif, png, bmp]",
+"msg_29" : "Nur Bilddatei hochladen Verfügbare Erweiterungsdatei [jpg, jpeg, gif, png, bmp, webp]",
 "msg_30" : "[%1] ist bereits hochgeladenes Bild!",
 "msg_31" : "[%1] Dateien können hochgeladen werden",
 "msg_32" : "Es konnte keine Datei mit mehr als [% 3] Größe hochgeladen werden.",
