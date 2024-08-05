@@ -180,7 +180,7 @@ var Msg = {
 "center" : "Centrer",
 "msg_27" : "Impossible de modifier le type pour l'élément actuel",
 "msg_28" : "Fait pour changer [%1]",
-"msg_29" : "Télécharger uniquement le fichier image Fichier d'extension disponible [jpg, jpeg, gif, png, bmp]",
+"msg_29" : "Télécharger uniquement le fichier image Fichier d'extension disponible [jpg, jpeg, gif, png, bmp, webp]",
 "msg_30" : "[%1] est une image déjà téléchargée!",
 "msg_31" : "[%1] fichiers peuvent être téléchargés",
 "msg_32" : "Impossible de télécharger un fichier de taille supérieure à [% 3].",
