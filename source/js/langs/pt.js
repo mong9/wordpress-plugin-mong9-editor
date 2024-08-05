@@ -180,7 +180,7 @@ var Msg = {
 "center" : "Centro",
 "msg_27" : "Não é possível alterar o tipo do item atual",
 "msg_28" : "Feito para mudar [%1]",
-"msg_29" : "Apenas upload de arquivo de imagem Arquivo de extensão disponível [jpg, jpeg, gif, png, bmp]",
+"msg_29" : "Apenas upload de arquivo de imagem Arquivo de extensão disponível [jpg, jpeg, gif, png, bmp, webp]",
 "msg_30" : "[%1] é aleady carregou a imagem!",
 "msg_31" : "[%1] arquivos podem ser enviados",
 "msg_32" : "Não é possível fazer upload de arquivos com tamanho excedendo [% 3].",
