@@ -64,8 +64,8 @@ function mong9editor_image_upload() {
 	$imageFileType = strtolower(pathinfo($new_file_path,PATHINFO_EXTENSION));
 
 	// Allow certain file formats
-	if ($imageFileType != 'jpg' && $imageFileType != 'png' && $imageFileType != 'jpeg' && $imageFileType != 'gif' && $imageFileType != 'bmp') {
-		print_m9_msg('type|'. m9_die_msg('Sorry, only JPG, JPEG, PNG, BMP & GIF files are allowed.'));
+	if ($imageFileType != 'jpg' && $imageFileType != 'png' && $imageFileType != 'jpeg' && $imageFileType != 'gif' && $imageFileType != 'bmp' && $imageFileType != 'webp') {
+		print_m9_msg('type|'. m9_die_msg('Sorry, only JPG, JPEG, PNG, BMP, GIF & WEBP files are allowed.'));
 	}
 
 	// Check file size
