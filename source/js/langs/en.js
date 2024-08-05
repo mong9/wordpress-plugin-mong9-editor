@@ -180,7 +180,7 @@ var Msg = {
 "center" : "Center",
 "msg_27" : "Unable to Change Type for Current Item",
 "msg_28" : "Done to change [%1]",
-"msg_29" : "Only upload image file Available extension file [jpg,jpeg,gif,png,bmp] ",
+"msg_29" : "Only upload image file Available extension file [jpg,jpeg,gif,png,bmp,webp] ",
 "msg_30" : "[%1] is aleady uploaded image!",
 "msg_31" : "[%1] files can be uploaded",
 "msg_32" : "Unable to upload exceeding [%3] size file.",
