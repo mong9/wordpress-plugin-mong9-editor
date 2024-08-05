@@ -180,7 +180,7 @@ var Msg = {
 "center" : "Centro",
 "msg_27" : "No se puede cambiar el tipo para el elemento actual",
 "msg_28" : "Hecho para cambiar [%1]",
-"msg_29" : "Cargar solo archivo de imagen Archivo de extensión disponible [jpg, jpeg, gif, png, bmp]",
+"msg_29" : "Cargar solo archivo de imagen Archivo de extensión disponible [jpg, jpeg, gif, png, bmp, webp]",
 "msg_30" : "[%1] ya está cargada la imagen!",
 "msg_31" : "[%1] archivos pueden cargarse",
 "msg_32" : "No se puede cargar más del archivo de tamaño [% 3].",
