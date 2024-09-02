@@ -713,6 +713,7 @@
 
 /* image effect */
 .m9-grid-block a.m9-img-zoom,.m9-grid-block a.m9-img-hover{position:relative;display:inline-block;*display:inline;*zoom:1;width:100%;line-height:0;overflow:hidden}
+.m9-grid-block a.m9-img-zoom{cursor:pointer}
 .m9-grid-block a.m9-img-zoom:after{content:'';position:absolute;bottom:2px;right:2px;display:inline-block;*display:inline;*zoom:1;width:30px;height:30px;border:none;background:rgba(0,0,0,0.4) url(../img/icon_zoom.png) no-repeat;}
 .m9-grid-block a.m9-img-hover ._m9_overlay{position:absolute;top:0;left:0;display:block;width:100%;height:100%;opacity:0;overflow:hidden;transition:0.3s ease}
 .m9-grid-block a.m9-img-hover ._m9_overlay>._in{display:table;width:100%;height:100%}
@@ -932,3 +933,5 @@
 /* 그누보드 설정 */
 #bo_v_con .m9-grid-block ul, #bo_v_con .m9-grid-block ol{list-style-type:none;margin:0;padding:0}
 #bo_v_con .m9-grid-block li{display:block}
+/* lightboxGallery */
+.lg-rotate-left.lg-icon,.lg-flip-ver.lg-icon{display:none}
