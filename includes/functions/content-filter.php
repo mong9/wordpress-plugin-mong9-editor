@@ -99,14 +99,14 @@ function Mong9_Html_Filter($conv_config) {
 	foreach ($allowedTags as $tag) {
 		$def->addAttribute($tag,'data-m9-m-style',new HTMLPurifier_AttrDef_CSS());
 		$def->addAttribute($tag,'data-m9-e-style',new HTMLPurifier_AttrDef_CSS());
+		$def->addAttribute($tag,'data-m9-execute','Text');
+		$def->addAttribute($tag,'data-m9-options','Text');
 	}
 
-	$def->addAttribute('div','data-m9-execute','Text');
 	$def->addAttribute('div','data-m9-tab-type','Text');
 	$def->addAttribute('a','data-m9-tab-type','Text');
 	$def->addAttribute('a','data-m9-href','Text');
-	$def->addAttribute('a','data-m9-execute','Text');
-	
+
 	$def->addAttribute('iframe', 'allowfullscreen', 'Bool');
 
 	$def->addAttribute('img','data-m9-m-src','Text');
